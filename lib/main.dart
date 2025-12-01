@@ -96,7 +96,7 @@ class _AppEntryState extends State<_AppEntry> {
         if (res == null || !res.success) {
           final message = res?.message ?? 'Unknown initialization error';
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
+            debugShowCheckedModeBanner: false, // Added this line
             home: Scaffold(
               body: SafeArea(
                 child: Center(
