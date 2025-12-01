@@ -1,3 +1,9 @@
+![GitHub Stars](https://img.shields.io/github/stars/Yashjain329/imgshape?style=social)
+![GitHub Forks](https://img.shields.io/github/forks/Yashjain329/imgshape?style=social)
+![GitHub License](https://img.shields.io/github/license/Yashjain329/imgshape)
+![Last Commit](https://img.shields.io/github/last-commit/Yashjain329/imgshape)
+
+
 # 📸 Imgshape
 
 `Imgshape` is a **cross-platform Flutter app** (Android, iOS, Web) that lets users **upload, analyze, and manage images** using **Supabase** for authentication + storage and a **custom backend API** for deep image analysis and insights.
