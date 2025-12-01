@@ -44,7 +44,7 @@ class _ImgShapeAppState extends State<ImgShapeApp> {
         ),
         GoRoute(
           path: '/home',
-          builder: (context, state) => const HomeScreen(),
+          builder: (context, state) => HomeScreen(),
         ),
         GoRoute(
           path: '/upload',
@@ -109,6 +109,7 @@ class _ImgShapeAppState extends State<ImgShapeApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       title: 'Imgshape',
       theme: AppTheme.light(),
       routerConfig: _router,

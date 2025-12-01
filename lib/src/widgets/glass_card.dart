@@ -1,6 +1,5 @@
-// lib/src/widgets/glass_card.dart
+import 'dart:ui';
 import 'package:flutter/material.dart';
-
 import '../theme/app_theme.dart';
 
 class GlassCard extends StatelessWidget {
@@ -17,12 +16,42 @@ class GlassCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final card = AppTheme().buildGlass(child, borderRadius: radius);
+    // High performance "Fake Glass" (No Blur)
+    final card = Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(radius),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.white.withOpacity(0.15),
+            Colors.white.withOpacity(0.05),
+          ],
+        ),
+        border: Border.all(
+          color: Colors.white.withOpacity(0.2),
+          width: 1.0,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.05),
+            blurRadius: 10,
+            spreadRadius: 0,
+            offset: const Offset(0, 4),
+          ),
+        ],
+      ),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(radius),
+        child: child,
+      ),
+    );
 
     if (onTap == null) return card;
 
     return GestureDetector(
       onTap: onTap,
+      behavior: HitTestBehavior.opaque,
       child: card,
     );
   }
@@ -57,15 +86,20 @@ class _PressableGlassCardState extends State<PressableGlassCard> {
 
   @override
   Widget build(BuildContext context) {
-    final scale = _pressed ? 0.995 : 1.0;
+    final scale = _pressed ? 0.98 : 1.0;
+
     return GestureDetector(
       onTapDown: _onTapDown,
       onTapUp: _onTapUp,
       onTapCancel: _onTapCancel,
       child: AnimatedScale(
-        duration: AppTheme.motionMedium,
+        duration: const Duration(milliseconds: 100),
         scale: scale,
-        child: AppTheme().buildGlass(widget.child, borderRadius: widget.radius),
+        curve: Curves.easeInOut,
+        child: GlassCard(
+          radius: widget.radius,
+          child: widget.child,
+        ),
       ),
     );
   }
