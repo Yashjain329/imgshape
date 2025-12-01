@@ -1,7 +1,10 @@
-![GitHub Stars](https://img.shields.io/github/stars/Yashjain329/imgshape?style=social)
-![GitHub Forks](https://img.shields.io/github/forks/Yashjain329/imgshape?style=social)
-![GitHub License](https://img.shields.io/github/license/Yashjain329/imgshape)
-![Last Commit](https://img.shields.io/github/last-commit/Yashjain329/imgshape)
+<p align="center">
+  <a href="https://flutter.dev/"><img src="https://img.shields.io/badge/Flutter-3.x-blue?logo=flutter"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg"></a>
+  <a href="https://github.com/Yashjain329/imgshape/stargazers"><img src="https://img.shields.io/github/stars/Yashjain329/imgshape?style=social"></a>
+  <img src="https://img.shields.io/github/forks/Yashjain329/imgshape?style=social">
+  <img src="https://img.shields.io/github/last-commit/Yashjain329/imgshape">
+</p>
 
 
 # 📸 Imgshape
